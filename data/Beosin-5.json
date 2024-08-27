@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "Beosin",
+  "risk": "2",
+  "title": "When you help other users purchase shares, the user's lock time will be refreshed, which may cause a DoS attack.",
+  "issueId": 5,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/5"
+}
