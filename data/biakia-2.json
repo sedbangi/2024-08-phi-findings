@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "biakia",
+  "risk": "3",
+  "title": "Replay attack in `TestPhiFactory`",
+  "issueId": 2,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/2"
+}
