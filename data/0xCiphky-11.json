@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "0xCiphky",
+  "risk": "2",
+  "title": "Refunds sent to incorrect addresses in certain cases",
+  "issueId": 11,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/11"
+}
