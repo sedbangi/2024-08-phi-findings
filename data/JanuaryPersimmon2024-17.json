@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "JanuaryPersimmon2024",
+  "risk": "3",
+  "title": "The SHARE_LOCK_PERIOD can be bypassed, and shares can be bought and sold during the same transaction immediately, if the _curator h",
+  "issueId": 17,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/17"
+}
