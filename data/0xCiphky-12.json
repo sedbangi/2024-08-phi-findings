@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "0xCiphky",
+  "risk": "2",
+  "title": "Hardcoded Fee Destination in PhiNFT1155/CreatorRoyaltiesControl Contracts Risks Misallocated or loss of Funds",
+  "issueId": 12,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/12"
+}
