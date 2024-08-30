@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "JanuaryPersimmon2024",
+  "risk": "3",
+  "title": "The Cred::_addCredIdPerAddress is publicly exposed, because its visibility is incorrectly specified",
+  "issueId": 15,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/15"
+}
