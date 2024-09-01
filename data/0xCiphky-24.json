@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "0xCiphky",
+  "risk": "3",
+  "title": "Insufficient Signature Verification Allows Unauthorized and Multiple Art Creations",
+  "issueId": 24,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/24"
+}
