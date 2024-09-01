@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "0xCiphky",
+  "risk": "3",
+  "title": "Reentrancy Vulnerability Allows Bypass of Cooldown, Leading to Unfair Reward Extraction Through Flash Loan",
+  "issueId": 25,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/25"
+}
