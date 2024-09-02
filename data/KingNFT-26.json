@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "KingNFT",
+  "risk": "2",
+  "title": "Potential MEV attack due to improper implementation of ````CuratorRewardsDistributor.distribute()````",
+  "issueId": 26,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/26"
+}
