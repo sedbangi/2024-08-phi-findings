@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "rbserver",
+  "risk": "2",
+  "title": "Signature corresponding to a used `signedData_` can be replayed to update an existing cred for multiple times through calling `Cred.updateCred` function",
+  "issueId": 34,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/34"
+}
