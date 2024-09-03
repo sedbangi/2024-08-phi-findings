@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "rbserver",
+  "risk": "2",
+  "title": "Signature corresponding to used `signedData_` can be replayed by calling `PhiFactory.createArt` function for multiple times to create multiple arts",
+  "issueId": 40,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/40"
+}
