@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "rbserver",
+  "risk": "2",
+  "title": "`CuratorRewardsDistributor.distribute` function incorrectly emits `distributeAmount` though it should emit `actualDistributeAmount` instead for `RewardsDistributed` event's `distributeAmount` data",
+  "issueId": 30,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/30"
+}
