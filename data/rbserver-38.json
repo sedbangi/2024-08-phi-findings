@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "rbserver",
+  "risk": "2",
+  "title": "`PhiRewards.depositRewards` function's restriction on self-referral would become ineffective when minter controls and uses another address as referrer",
+  "issueId": 38,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/38"
+}
