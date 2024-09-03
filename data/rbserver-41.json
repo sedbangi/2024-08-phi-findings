@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "rbserver",
+  "risk": "2",
+  "title": "`PhiFactory.signatureClaim` and `PhiFactory.merkleClaim` functions lack slippage controls for specifying maximum total mint fee that respective function caller is willing to pay",
+  "issueId": 41,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/41"
+}
