@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "rbserver",
+  "risk": "2",
+  "title": "`PhiFactory.setArtCreatFee` function is always DOS'ed when `artCreateFee` needs to be set to a normal art creation fee value in ETH",
+  "issueId": 36,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/36"
+}
