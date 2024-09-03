@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "rbserver",
+  "risk": "2",
+  "title": "Signature associated with a used `encodeData_` for calling `PhiFactory.signatureClaim` function can be replayed to claim an art repeatedly",
+  "issueId": 37,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/37"
+}
