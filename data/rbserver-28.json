@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "rbserver",
+  "risk": "3",
+  "title": "When `PhiFactory.claim` function is called with a `msg.value` that is more than total mint fee, the difference between such `msg.value` and total mint fee cannot be refunded to caller of such function",
+  "issueId": 28,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/28"
+}
