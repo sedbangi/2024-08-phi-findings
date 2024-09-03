@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "rbserver",
+  "risk": "3",
+  "title": "`Claimable.signatureClaim` or `Claimable.merkleClaim` function caller fails to receive refund of difference between `msg.value` and total mint fee",
+  "issueId": 29,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/29"
+}
