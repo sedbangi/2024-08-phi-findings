@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "rbserver",
+  "risk": "2",
+  "title": "`RewardControl.withdrawFor` function can be called without `from` address' authorization, which can frontrun and DOS `from` address' `RewardControl.withdraw` function call and trigger `from` address' `receive` function's logics without its approval",
+  "issueId": 35,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/35"
+}
