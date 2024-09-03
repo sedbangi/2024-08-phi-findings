@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "al88nsk",
+  "risk": "3",
+  "title": "No access control on function CuratorRewardsDistributor::distribute allows anyone to distribute rewards and take royalty fees",
+  "issueId": 27,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/27"
+}
