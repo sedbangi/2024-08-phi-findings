@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "0xrex",
+  "risk": "2",
+  "title": "Cred creator can reenter buyShareCred function to get a better deal instead of buying all at once",
+  "issueId": 49,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/49"
+}
