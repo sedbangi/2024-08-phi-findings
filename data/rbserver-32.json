@@ -1,0 +1,8 @@
+{
+  "contest": 427,
+  "handle": "rbserver",
+  "risk": "2",
+  "title": "`PhiFactory.createArt` function is DOS'ed when it is called with a `msg.value` that is more than art creation fee even though it is supposed to finish art creation process and refund difference between such `msg.value` and art creation fee to its caller",
+  "issueId": 32,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/32"
+}
