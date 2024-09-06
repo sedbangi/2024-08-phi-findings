@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "kn0t",
+  "risk": "2",
+  "title": "`createArt` Function of `PhiFactory` Causing Reverts with Excess ETH",
+  "issueId": 178,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/178",
+  "originalIssueId": 406,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/406"
+}
