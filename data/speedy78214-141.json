@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "speedy78214",
+  "risk": "3",
+  "title": "Lack of Access Control for `CuratorRewardsDistributor::distribute function`",
+  "issueId": 141,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/141",
+  "originalIssueId": 473,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/473"
+}
