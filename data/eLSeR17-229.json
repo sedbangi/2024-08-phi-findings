@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "eLSeR17",
+  "risk": "2",
+  "title": "Malicious attacker can deny a curator from calling sellShareCred() succesfully",
+  "issueId": 229,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/229",
+  "originalIssueId": 281,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/281"
+}
