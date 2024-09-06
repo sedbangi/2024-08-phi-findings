@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "0xBugSlayer",
+  "risk": "3",
+  "title": "Both `mintProtocolFee` and `artCreateFee` are implemented incorrectly in `PhiFactory`",
+  "issueId": 176,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/176",
+  "originalIssueId": 416,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/416"
+}
