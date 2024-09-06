@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "mjcpwns",
+  "risk": "2",
+  "title": "_removeCredIdPerAddress allows anyone to remove credId from any address. _addCredIdPerAddress  and _removeCredIdPerAddress  should not be public and should be internal",
+  "issueId": 211,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/211",
+  "originalIssueId": 330,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/330"
+}
