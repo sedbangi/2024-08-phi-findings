@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "0xBugSlayer",
+  "risk": "2",
+  "title": "No `protocolFee` upper bound in `Cred` contract",
+  "issueId": 62,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/62",
+  "originalIssueId": 405,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/405"
+}
