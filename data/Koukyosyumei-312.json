@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "Koukyosyumei",
+  "risk": "3",
+  "title": "Potential Signature Replay Attack in `withdrawWithSig` Function",
+  "issueId": 312,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/312",
+  "originalIssueId": 33,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/33"
+}
