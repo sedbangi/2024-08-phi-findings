@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "kuprum",
+  "risk": "3",
+  "title": "DoS in `CuratorRewardsDistributor` due to accumulation of curators with 0 shares in `Cred`",
+  "issueId": 282,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/282",
+  "originalIssueId": 93,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/93"
+}
