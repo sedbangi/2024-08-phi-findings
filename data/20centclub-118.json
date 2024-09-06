@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "20centclub",
+  "risk": "2",
+  "title": "Incorrect handling of mintProtocolFee using basis points leads to miscalculated transfers",
+  "issueId": 118,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/118",
+  "originalIssueId": 531,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/531"
+}
