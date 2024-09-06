@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "0xc0ffEE",
+  "risk": "2",
+  "title": "Creating art fails because unable to refund excess ether value",
+  "issueId": 284,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/284",
+  "originalIssueId": 91,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/91"
+}
