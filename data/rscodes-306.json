@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "rscodes",
+  "risk": "3",
+  "title": "Lacks of checks in signature inside `createArt` allows art with unapproved `CreateConfig` parameters to be deployed without permission",
+  "issueId": 306,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/306",
+  "originalIssueId": 46,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/46"
+}
