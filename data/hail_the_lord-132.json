@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "hail_the_lord",
+  "risk": "3",
+  "title": "The creator or share buyer could bypass the `SHARE_LOCK_PERIOD` and sell the share immediately after purchasing it.",
+  "issueId": 132,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/132",
+  "originalIssueId": 493,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/493"
+}
