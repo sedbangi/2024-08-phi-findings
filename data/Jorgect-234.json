@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "Jorgect",
+  "risk": "3",
+  "title": "Attacker can front run the `createArt` function and change the config,",
+  "issueId": 234,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/234",
+  "originalIssueId": 250,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/250"
+}
