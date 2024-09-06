@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "typicalHuman",
+  "risk": "3",
+  "title": "Malicious user can block a user's sell trades by buying shares on their behalf.",
+  "issueId": 292,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/292",
+  "originalIssueId": 80,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/80"
+}
