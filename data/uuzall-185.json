@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "uuzall",
+  "risk": "3",
+  "title": "Distributor's Rewards can be Stolen by Anyone by Directly calling the `distribute` function",
+  "issueId": 185,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/185",
+  "originalIssueId": 392,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/392"
+}
