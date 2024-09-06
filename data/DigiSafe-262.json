@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "DigiSafe",
+  "risk": "2",
+  "title": "[M-1] Buying a share for someone prevents him from selling shares for a lock period",
+  "issueId": 262,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/262",
+  "originalIssueId": 193,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/193"
+}
