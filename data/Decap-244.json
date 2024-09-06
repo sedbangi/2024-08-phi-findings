@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "Decap",
+  "risk": "3",
+  "title": "Reentrancy in Cred::buyShareCred allows to bypass Cred::SHARE_LOCK_PERIOD",
+  "issueId": 244,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/244",
+  "originalIssueId": 234,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/234"
+}
