@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "kuprum",
+  "risk": "3",
+  "title": "Frontrunning of reward distribution allows to steal rewards from curators",
+  "issueId": 278,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/278",
+  "originalIssueId": 101,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/101"
+}
