@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "MrPotatoMagic",
+  "risk": "2",
+  "title": "Function _removeCredIdPerAddress() is public leading to DOS attacks when users sell shares",
+  "issueId": 80,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/80",
+  "originalIssueId": 652,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/652"
+}
