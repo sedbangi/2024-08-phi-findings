@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "Decap",
+  "risk": "2",
+  "title": "Fees PhiFactory::artCreateFee and PhiFactory::mintProtocolFee are very low",
+  "issueId": 242,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/242",
+  "originalIssueId": 237,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/237"
+}
