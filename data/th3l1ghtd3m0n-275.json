@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "th3l1ghtd3m0n",
+  "risk": "3",
+  "title": "Wrong visibility in Cred.sol::_removeCredIdPerAddress() function can prevent users to sell their shares",
+  "issueId": 275,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/275",
+  "originalIssueId": 124,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/124"
+}
