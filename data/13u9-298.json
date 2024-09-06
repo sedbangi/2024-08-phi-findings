@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "13u9",
+  "risk": "2",
+  "title": "'claim' function of the PhiFactory contract, if msg.value is greater than mintFee, the remaining ether after subtracting mintFee will not be returned.",
+  "issueId": 298,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/298",
+  "originalIssueId": 68,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/68"
+}
