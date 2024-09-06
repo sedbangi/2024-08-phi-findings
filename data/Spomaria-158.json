@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "Spomaria",
+  "risk": "3",
+  "title": "The `CuratorRewardsDistributor::distribute` lacks access control allowing anyone to claim royalty fee from the protocol",
+  "issueId": 158,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/158",
+  "originalIssueId": 447,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/447"
+}
