@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "Inspecktor",
+  "risk": "2",
+  "title": "Possible freezing of funds in the PhiNFT1155.sol contract",
+  "issueId": 153,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/153",
+  "originalIssueId": 457,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/457"
+}
