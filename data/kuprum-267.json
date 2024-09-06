@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "kuprum",
+  "risk": "2",
+  "title": "Explicit `receive` but no `withdraw` in `PhiNFT1155`; funds will be stuck",
+  "issueId": 267,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/267",
+  "originalIssueId": 176,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/176"
+}
