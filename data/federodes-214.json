@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "federodes",
+  "risk": "2",
+  "title": "`PhiFactory::createArt` Reverts When Sending More Than NFT_ART_CREATE_FEE as msg.value",
+  "issueId": 214,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/214",
+  "originalIssueId": 326,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/326"
+}
