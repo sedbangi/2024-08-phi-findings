@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "IzuMan",
+  "risk": "3",
+  "title": "`Cred::_handleTrade` is Vulnerable to Re-entrancy and Skips `SHARE_LOCK_PERIOD` Check",
+  "issueId": 128,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/128",
+  "originalIssueId": 503,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/503"
+}
