@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "Agontuk",
+  "risk": "3",
+  "title": "Attacker can drain funds and manipulate share balances through reentrancy in `Cred::buyShareCred()` and `Cred::sellShareCred()`",
+  "issueId": 71,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/71",
+  "originalIssueId": 120,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/120"
+}
