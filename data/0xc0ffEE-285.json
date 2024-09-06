@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "0xc0ffEE",
+  "risk": "2",
+  "title": "Can not update protocol fee and art create fee properly",
+  "issueId": 285,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/285",
+  "originalIssueId": 90,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/90"
+}
