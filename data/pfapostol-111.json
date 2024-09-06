@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "pfapostol",
+  "risk": "2",
+  "title": "Incorrect refund logic in `createArtFromFactory`",
+  "issueId": 111,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/111",
+  "originalIssueId": 543,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/543"
+}
