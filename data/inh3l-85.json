@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "inh3l",
+  "risk": "2",
+  "title": "Arts cannot be created if protocol is deployed on zkEVMs or zkSync",
+  "issueId": 85,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/85",
+  "originalIssueId": 640,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/640"
+}
