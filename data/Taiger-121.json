@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "Taiger",
+  "risk": "3",
+  "title": "Unrestricted Cred ID Manipulation Vulnerability",
+  "issueId": 121,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/121",
+  "originalIssueId": 526,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/526"
+}
