@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "rscodes",
+  "risk": "3",
+  "title": "Lack of data validation when users are claiming their art allows malicious user to bypass signature/merkle hash to provide unapproved `ref_`, `artId_` and `imageURI`",
+  "issueId": 73,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/73",
+  "originalIssueId": 77,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/77"
+}
