@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "0xAkira",
+  "risk": "2",
+  "title": "Wrong msg.sender",
+  "issueId": 105,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/105",
+  "originalIssueId": 556,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/556"
+}
