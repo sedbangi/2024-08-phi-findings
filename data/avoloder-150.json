@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "avoloder",
+  "risk": "3",
+  "title": "An attacker can prevent anyone to sell all creds",
+  "issueId": 150,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/150",
+  "originalIssueId": 461,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/461"
+}
