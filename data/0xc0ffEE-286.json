@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "0xc0ffEE",
+  "risk": "2",
+  "title": "Wrong function visibility allows anyone to add/remove `credId` from any address's list",
+  "issueId": 286,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/286",
+  "originalIssueId": 89,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/89"
+}
