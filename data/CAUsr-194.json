@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "CAUsr",
+  "risk": "3",
+  "title": "Reward distribution is vulnerable to flash loan attacks",
+  "issueId": 194,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/194",
+  "originalIssueId": 366,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/366"
+}
