@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "Trooper",
+  "risk": "3",
+  "title": "CuratorRewardsDistributor: Anyone can call distribute and claim the royalty fee",
+  "issueId": 142,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/142",
+  "originalIssueId": 472,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/472"
+}
