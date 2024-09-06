@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "ironside",
+  "risk": "2",
+  "title": "Refund sent to contract instead of user in `PhiFactory::_processClaim`",
+  "issueId": 249,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/249",
+  "originalIssueId": 222,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/222"
+}
