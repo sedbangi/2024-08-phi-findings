@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "DanielArmstrong",
+  "risk": "2",
+  "title": "`PhiFactory` does not refund excess `eth` to the user when `createArt`.",
+  "issueId": 281,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/281",
+  "originalIssueId": 96,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/96"
+}
