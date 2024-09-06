@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "xiao",
+  "risk": "2",
+  "title": "Remove immutable Keyword and Change to constant for Upgradeable Contract Support",
+  "issueId": 69,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/69",
+  "originalIssueId": 134,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/134"
+}
