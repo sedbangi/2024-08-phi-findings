@@ -1,0 +1,10 @@
+{
+  "contest": 427,
+  "handle": "JustUzair",
+  "risk": "2",
+  "title": "Critical State-Changing Functions Are Marked as Public Instead of Internal or Private",
+  "issueId": 314,
+  "issueUrl": "https://github.com/code-423n4/2024-08-phi-findings/issues/314",
+  "originalIssueId": 24,
+  "originalIssueUrl": "https://github.com/code-423n4/2024-08-phi-validation/issues/24"
+}
