@@ -798,7 +798,7 @@ DoS
 ## [[H-06] Reentrancy in creating Creds allows an attacker to steal all Ether from the Cred contract](https://github.com/code-423n4/2024-08-phi-findings/issues/25)
 *Submitted by [CAUsr](https://github.com/code-423n4/2024-08-phi-findings/issues/195), also found by [0xCiphky](https://github.com/code-423n4/2024-08-phi-findings/issues/25), [0xc0ffEE](https://github.com/code-423n4/2024-08-phi-findings/issues/283), smaul ([1](https://github.com/code-423n4/2024-08-phi-findings/issues/279), [2](https://github.com/code-423n4/2024-08-phi-findings/issues/68)), [hearmen](https://github.com/code-423n4/2024-08-phi-findings/issues/274), [farismaulana](https://github.com/code-423n4/2024-08-phi-findings/issues/269), [aldarion](https://github.com/code-423n4/2024-08-phi-findings/issues/266), [Decap](https://github.com/code-423n4/2024-08-phi-findings/issues/244), [rscodes](https://github.com/code-423n4/2024-08-phi-findings/issues/225), [lu1gi](https://github.com/code-423n4/2024-08-phi-findings/issues/204), [Jorgect](https://github.com/code-423n4/2024-08-phi-findings/issues/201), CAUsr ([2](https://github.com/code-423n4/2024-08-phi-findings/issues/194)), [pfapostol](https://github.com/code-423n4/2024-08-phi-findings/issues/169), [McToady](https://github.com/code-423n4/2024-08-phi-findings/issues/148), [hail\_the\_lord](https://github.com/code-423n4/2024-08-phi-findings/issues/132), [Ruhum](https://github.com/code-423n4/2024-08-phi-findings/issues/129), [IzuMan](https://github.com/code-423n4/2024-08-phi-findings/issues/128), [hgrano](https://github.com/code-423n4/2024-08-phi-findings/issues/113), [MrPotatoMagic](https://github.com/code-423n4/2024-08-phi-findings/issues/82), [Agontuk](https://github.com/code-423n4/2024-08-phi-findings/issues/71), 0xrex ([1](https://github.com/code-423n4/2024-08-phi-findings/issues/49), [2](https://github.com/code-423n4/2024-08-phi-findings/issues/21)), [KupiaSec](https://github.com/code-423n4/2024-08-phi-findings/issues/47), and [JanuaryPersimmon2024](https://github.com/code-423n4/2024-08-phi-findings/issues/17)*
 
-***Note: the [submission](https://github.com/code-423n4/2024-08-phi-findings/issues/25) from warden 0xCiphky was originally featured as `H-06` in this report; however, after further discussion between the judge and sponsor, it was determined that a different submission demonstrates the largest impact of the common issue. Per direction from the judge, this audit report was updated on October 16, 2024 to instead highlight the submission below from warden CAUsr.***
+***Note: the [submission](https://github.com/code-423n4/2024-08-phi-findings/issues/25) from warden 0xCiphky was originally featured as `H-06` in this report; however, after further discussion between the judge and sponsor, it was determined that a different submission demonstrates the largest impact of the common issue. Per direction from the judge, this audit report was updated on October 16, 2024 to highlight the submission below from warden CAUsr.***
 
 ### Vulnerability Details
 
@@ -1097,10 +1097,10 @@ To mitigate this attack vector it would be enough to add a reentrancy guard [her
 
 **[ZaK3939 (Phi) confirmed via issue \#25](https://github.com/code-423n4/2024-08-phi-findings/issues/25#event-14169412928)**
 
-***Please note: the following re-assessment took place approximately 3 weeks after judging and awarding were finalized.***
-
 **[0xDjango (judge) commented](https://github.com/code-423n4/2024-08-phi-findings/issues/195#issuecomment-2414861921):**
 > After further discussion, this submission should be selected for the public report. It shares the same root cause and fix as [#25](https://github.com/code-423n4/2024-08-phi-findings/issues/25), though highlights a much more severe impact. Sponsor indicated that there is a possibility that multiple price curves may be selectable in the future.
+
+***Please note: the above re-assessment took place approximately 3 weeks after judging and awarding were finalized.***
 
 ***
 
